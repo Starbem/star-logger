@@ -15,8 +15,6 @@
     "lint:check": "eslint . --ignore-pattern dist/",
     "lint:format": "prettier --write .",
     "lint:format:check": "prettier --check .",
-    "prettier": "prettier --write 'src/**/*.{js,ts,json,md}'",
-    "prettier:check": "prettier --check 'src/**/*.{js,ts,json,md}'",
     "coverage": "jest --watchAll --coverage",
     "prepare": "husky"
   },
