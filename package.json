@@ -1,7 +1,7 @@
 {
   "name": "@starbemtech/star-logger",
   "description": "A TypeScript logging module using Winston and MongoDB, enabling easy integration of logging functionalities into your Node.js microservices. It offers configurable log levels, custom formats, and saves logs to MongoDB, facilitating centralized logging and easy access to logs.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "root": true,

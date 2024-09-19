@@ -37,6 +37,7 @@ export function getLogger(
           },
           collection: options.collection || 'logs',
           level: options.level || 'info',
+          label: application,
           metaKey: 'meta',
         }) as MongoDBTransportInstance,
       ],
