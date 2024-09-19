@@ -5,7 +5,7 @@ import {
   MongoDBConnectionOptions,
 } from 'winston-mongodb'
 
-interface LoggerOptions {
+export interface LoggerOptions {
   level?: string
   collection?: string
   mongoOptions?: MongoDBConnectionOptions
