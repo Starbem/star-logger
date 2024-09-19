@@ -26,10 +26,19 @@ describe('Logger Module', () => {
   })
 
   afterAll(async () => {
-    // Close the MongoDB connection and stop the in-memory server
+    // Close the Winston logger transports
+    logger.transports.forEach((transport) => {
+      if (typeof transport.close === 'function') {
+        transport.close()
+      }
+    })
+
+    // Close the MongoDB client
     if (client) {
       await client.close()
     }
+
+    // Stop the in-memory MongoDB server
     if (mongoServer) {
       await mongoServer.stop()
     }

@@ -1,17 +1,17 @@
-import { Logger, createLogger, format, transports } from "winston";
-import "winston-mongodb";
+import { Logger, createLogger, format, transports } from 'winston'
+import 'winston-mongodb'
 import {
   MongoDBTransportInstance,
   MongoDBConnectionOptions,
-} from "winston-mongodb";
+} from 'winston-mongodb'
 
 interface LoggerOptions {
-  level?: string;
-  collection?: string;
-  mongoOptions?: MongoDBConnectionOptions;
+  level?: string
+  collection?: string
+  mongoOptions?: MongoDBConnectionOptions
 }
 
-let logger: Logger;
+let logger: Logger
 
 export function getLogger(
   application: string,
@@ -20,7 +20,7 @@ export function getLogger(
 ): Logger {
   if (!logger) {
     logger = createLogger({
-      level: options.level || "info",
+      level: options.level || 'info',
       format: format.combine(
         format.label({ label: application }),
         format.timestamp(),
@@ -35,13 +35,13 @@ export function getLogger(
             useUnifiedTopology: true,
             ...options.mongoOptions,
           },
-          collection: options.collection || "logs",
-          level: options.level || "info",
-          metaKey: "meta",
+          collection: options.collection || 'logs',
+          level: options.level || 'info',
+          metaKey: 'meta',
         }) as MongoDBTransportInstance,
       ],
-    });
+    })
   }
 
-  return logger;
+  return logger
 }
