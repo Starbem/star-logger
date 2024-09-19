@@ -19,7 +19,7 @@ Welcome to **My Logger**, a Node.js module written in TypeScript that simplifies
 You can install the module via NPM:
 
 ```bash
-$ yarn add star-logger
+$ yarn add @starbemtech/star-logger
 ```
 
 ## Usage
